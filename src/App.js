@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function replaceCamel(colorName) {
   return colorName.split(/(?=[A-Z])/).join(" ");
+
   // .split("")
   // .map((char, index) => {
   //   if (index === 0 || char !== char.toUpperCase()) {
@@ -23,11 +24,15 @@ function App() {
       <button
         onClick={() => setColor(!color)}
         style={{
-          backgroundColor: !disabled ? (color ? "red" : "blue") : "grey",
+          backgroundColor: !disabled
+            ? color
+              ? "MediumVioletRed"
+              : "MidnightBlue"
+            : "grey",
         }}
         disabled={disabled}
       >
-        Change to {color ? "blue" : "red"}
+        Change to {color ? "Midnight Blue" : "Medium Violet Red"}
       </button>
 
       <input
